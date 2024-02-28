@@ -8,7 +8,7 @@ import { RxDotFilled } from "react-icons/rx";
 
 const slides = [
   {
-    url: "https://img.hotimg.com/black-white-programming-programming-language-Python-programming-1922925-wallhere.com.png",
+    url: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80",
   },
   {
     url: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
@@ -27,46 +27,45 @@ const slides = [
 
 const AboutSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [opacity, setOpacity] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  useEffect(() => {
-   // Inicia a transição de opacidade para tornar a imagem visível
-   setOpacity(1);
-
-    // Configura o slider para mudar automaticamente de slide a cada 3.5 segundos
-    const slideInterval = setInterval(() => {
-      setOpacity(0); // Torna a imagem transparente antes de mudar para o próximo slide
-      setTimeout(() => {
-        const newIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
-        setCurrentIndex(newIndex);
-      }, 600); // Espera a transição de opacidade terminar antes de mudar o slide
-    }, 3500);
-    return () => clearInterval(slideInterval);
-  }, [currentIndex]);
-
-  const nextSlide = () => {
-    // Move this function inside useEffect if it's not used elsewhere
-    const newIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
+  const changeSlide = (newIndex: React.SetStateAction<number>) => {
+    setIsTransitioning(true); // Inicia a transição
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+      setIsTransitioning(false); // Termina a transição
+    }, 500); // A duração deve corresponder ao tempo de transição CSS
   };
-
-   
 
   const prevSlide = () => {
     const newIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
+    changeSlide(newIndex);
+  };
+
+  const nextSlide = () => {
+    const newIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+    changeSlide(newIndex);
   };
 
   const goToSlide = (slideIndex: React.SetStateAction<number>) => {
-    setCurrentIndex(slideIndex);
+    changeSlide(slideIndex);
   };
+
+  // Adiciona o useEffect para mudar o slide automaticamente
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide(); // Chama a função nextSlide a cada 3 segundos
+    }, 3000); // 3000 ms = 3 segundos
+
+    return () => clearInterval(interval); // Limpa o intervalo quando o componente for desmontado
+  }, [currentIndex]); // Dependências: recria o intervalo quando currentIndex muda
 
   return (
     <section id="sobre">
       <div className="my-12 pb-12 md:pt-16 md:pb-48">
         <h1 className="text-center font-bold text-4xl">
           Sobre
-          <hr className="w-6 h-1 mx-auto my-4 bg-sky-500 border-0 rounded"></hr>
+          <hr className="w-8 h-1 mx-auto my-4 bg-red-700 border-0 rounded"></hr>
         </h1>
 
         <div className="flex flex-col space-y-10 items-stretch justify-center align-top md:space-x-10 md:space-y-0 md:p-4 md:flex-row md:text-left">
@@ -77,7 +76,7 @@ const AboutSection = () => {
                   style={{
                     backgroundImage: `url(${slides[currentIndex].url})`,
                     transition: "opacity 0.5s ease-in-out",
-                    opacity: opacity,
+                    opacity: isTransitioning ? 0 : 1, // Aplica opacidade baseada no estado de transição
                   }}
                   className="absolute top-0 left-0 right-0 bottom-0 bg-center bg-cover rounded-2xl"
                 ></div>
@@ -91,7 +90,7 @@ const AboutSection = () => {
                 </div>
               </div>
               <div className="flex justify-center py-2 space-x-1">
-                {slides.map((_, slideIndex) => (
+                {slides.map((_slide, slideIndex) => (
                   <div
                     key={slideIndex}
                     onClick={() => goToSlide(slideIndex)}
@@ -135,15 +134,8 @@ const AboutSection = () => {
                   and love to keep myself engaged and learning new things.
                 </p>
                 <p>
-                  I believe that you should{" "}
-                  <span className="font-bold text-sky-600">
-                    never stop growing
-                  </span>{" "}
-                  and that's what I strive to do. I have a passion for
-                  technology and a desire to always push the limits of what is
-                  possible. I&apos;m excited to see where my career takes me and am
-                  always open to new opportunities and how they can change my
-                  life 🚀
+                  
+                  buscando aprender mais
                 </p>
               </div>
             </div>

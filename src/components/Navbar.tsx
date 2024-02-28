@@ -69,7 +69,7 @@ export default function Navbar() {
                 <Link
                   key={idx}
                   to={item.page}
-                  className="block lg:inline-block  px-2 py-2 rounded-md text-neutral-500 hover:bg-stone-500 hover:text-white dark:text-neutral-100 dark:hover:bg-stone-800"
+                  className="block lg:inline-block cursor-pointer  px-2 py-2 rounded-md text-neutral-500 hover:bg-stone-500 hover:text-white dark:text-neutral-100 dark:hover:bg-stone-800"
                   activeClass="active"
                   spy={true}
                   smooth={true}
