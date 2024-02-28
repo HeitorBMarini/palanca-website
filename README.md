@@ -6,4 +6,4 @@ This is my project with Next.js, Tailwind CSS and React.js!
 
 ## For see the project:
 
-[Click here for see the project](https://palanca-website-f6xu.vercel.app)
+[Click here for see the project](https://palanca-website.vercel.app)
