@@ -77,6 +77,7 @@ const AboutSection = () => {
                     backgroundImage: `url(${slides[currentIndex].url})`,
                     transition: "opacity 0.5s ease-in-out",
                     opacity: isTransitioning ? 0 : 1, // Aplica opacidade baseada no estado de transição
+                    
                   }}
                   className="absolute top-0 left-0 right-0 bottom-0 bg-center bg-cover rounded-2xl"
                 ></div>

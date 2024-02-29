@@ -32,7 +32,7 @@ const HeroSection = () => {
           </p>
           <Link
             to="eventos"
-            className="text-slate-100 cursor-pointer font-semibold px-6 py-3 shadow-md bg-red-700 rounded  hover:bg-black hover:text-red-600"
+            className="text-slate-100 cursor-pointer font-semibold px-6 py-3 shadow-md bg-red-700 rounded  hover:bg-red-600 "
             activeClass="active"
             spy={true}
             smooth={true}
