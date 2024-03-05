@@ -4,11 +4,9 @@ import Image from "next/image";
 
 import { HiArrowDown } from "react-icons/hi";
 import { Link } from "react-scroll/modules";
-
+import TypingAnimation from "./TypingAnimation";
 
 const HeroSection = () => {
-
-  
   return (
     <section id="home">
       <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 py-16 sm:py-32 md:py-48 md:flex-row md:space-x-4 md:text-left">
@@ -22,12 +20,13 @@ const HeroSection = () => {
           />
         </div>
         <div className="md:mt-2 md:w-3/5">
-          <h1 className="text-xl font-bold mt-6 md:mt-0 md:text-7xl w-full">
-            Olá, Sou Dj Santiago
-          </h1>
+        <TypingAnimation text="Olá, me chamo Dj Santiago" />
+
+
+
           <p className="text-lg mt-4 mb-6 md:text-2xl">
-            Sou 
-            <span className="font-semibold text-red-600"> Dj  </span>
+            Sou
+            <span className="font-semibold text-red-600"> Dj </span>
             Moro em São Paulo - Brasil, alguns dos meus eventos abaixo
           </p>
           <Link
