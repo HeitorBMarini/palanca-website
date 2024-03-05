@@ -21,7 +21,7 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({ text }) => {
   };
 
   return (
-    <div className="text-xl font-bold mt-6 md:mt-0 md:text-7xl w-full text-white">
+    <div className="text-4xl font-bold mt-6 md:mt-0 md:text-7xl w-full text-white">
       {renderAnimatedText(text)}
     </div>
   );
