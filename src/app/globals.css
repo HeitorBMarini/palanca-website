@@ -40,7 +40,7 @@
   .link-hover-underline:focus::after {
     /* A largura da linha sublinhada é ajustada para se adequar ao texto também em dispositivos móveis */
     /* Reduz a largura da linha sublinhada para não ocupar o espaço completo do botão */
-    width: calc(100% - 450px);
+    width: calc(100% - 425px);
   }
 }
 
