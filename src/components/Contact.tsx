@@ -1,14 +1,15 @@
 import React from "react";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { BiLogoWhatsapp, BiLogoGmail, BiLogoSpotify } from "react-icons/bi";
+import { TbBrandTiktok } from "react-icons/tb";
 
 const Contact = () => {
   return (
     <section id="contato" className="text-white">
-      <div className="container mx-auto mt-12 pb-8 md:pt-16 md:pb-48 px-4">
+      <div className="container mx-auto mt-12 pb-4 md:pt-16 md:pb-48 px-4">
         <h1 className="text-center font-bold text-4xl">
           Contato
-          <hr className="w-8 h-1 mx-auto my-4 bg-red-700 border-0 rounded "></hr>
+          <hr className="w-8 h-1 mx-auto my-4 bg-amber-400 border-0 rounded "></hr>
         </h1>
 
         {/* Contato Direto, Redes Sociais e Playlists juntos com responsividade */}
@@ -51,6 +52,16 @@ const Contact = () => {
             className="flex items-center"
           >
             <BiLogoSpotify size={55} className="text-green-600 cursor-pointer hover:-translate-y-1 transition-transform" />
+          </a>
+
+           {/* TikTok */}
+           <a
+            href="https://www.tiktok.com/@santiagopalanca"
+            rel="noreferrer"
+            target="_blank"
+            className="flex items-center"
+          >
+            <TbBrandTiktok size={55} className="text-amber-600 cursor-pointer hover:-translate-y-1 transition-transform" />
           </a>
         </div>
       </div>

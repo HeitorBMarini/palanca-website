@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-scroll/modules";
 
 import { useTheme } from "next-themes";
-import { RiMoonFill, RiSunLine } from "react-icons/ri";
+
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 
 interface NavItem {
@@ -36,18 +36,26 @@ export default function Navbar() {
   const currentTheme = theme === "system" ? systemTheme : theme;
   const [navbar, setNavbar] = useState(false);
   return (
-    <header className="w-full mx-auto  px-4 sm:px-20 fixed top-0 z-50 shadow bg-white dark:bg-zinc-900 dark:border-b dark:border-stone-600">
+    <header className="w-full mx-auto  px-4 sm:px-20 fixed top-0 z-50
+     shadow bg-zinc-800 
+     shadow-stone-900">
       <div className="justify-between md:items-center md:flex">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="home">
               <div className="container flex items-center space-x-2">
-                <h2 className="text-2xl font-bold">Santiago Palanca</h2>
+              <img
+            src="/banco-safra-logo.png"
+            alt="banco-safra"
+            width="500"
+            height="500"
+            className=" max-w-20 max-h-20 ml-3"
+          />
               </div>
             </Link>
             <div className="md:hidden">
               <button
-                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                className="p-2 text-white-700 rounded-md outline-none focus:border-gray-400 focus:border"
                 onClick={() => setNavbar(!navbar)}
               >
                 {navbar ? <IoMdClose size={30} /> : <IoMdMenu size={30} />}
@@ -68,7 +76,9 @@ export default function Navbar() {
                   <Link
                     key={idx}
                     to={item.page}
-                    className="link-hover-underline block lg:inline-block cursor-pointer px-2 py-2 rounded-md text-neutral-500 hover:bg-stone-500 hover:text-white dark:text-neutral-100 dark:hover:bg-stone-800"
+                    className="link-hover-underline block lg:inline-block cursor-pointer px-2 py-2 
+                    rounded-md text-neutral-500 hover:bg-stone-500 hover:text-white dark:text-neutral-100
+                     dark:hover:bg-stone-800"
                     activeClass="active"
                     spy={true}
                     smooth={true}

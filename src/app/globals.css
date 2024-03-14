@@ -24,7 +24,7 @@
     display: block;
     width: 0;
     height: 2px; /* Altura da linha sublinhada */
-    background: red; /* Usa a cor atual do texto com 'currentcolor'*/
+    background: #f59e0b; /* Usa a cor atual do texto com 'currentcolor'*/
     transition: width 0.3s ease-in-out; /* Animação suave */
     margin-top: 2px; /* Espaçamento entre o texto e a linha */
   }
@@ -57,3 +57,7 @@
     margin-right: 4px; /* Ajuste conforme necessário */
   }
   
+
+  .background-layout{
+ background-color: #341811;
+  }

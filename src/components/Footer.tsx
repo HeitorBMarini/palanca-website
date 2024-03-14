@@ -12,7 +12,7 @@ export default function Header() {
         </div>
         <div className="flex flex-row items-center justify-center space-x-2 mb-1">
           <FaHeadphonesSimple
-            className=" mt-4 transition-transform  text-rose-700 dark:text-rose-700 md:mt-2 md:mb-2"
+            className=" mt-4 transition-transform  text-amber-500 md:mt-2 md:mb-2"
             size={30}
           />
         </div>

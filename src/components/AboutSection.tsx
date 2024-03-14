@@ -65,7 +65,7 @@ const AboutSection = () => {
       <div className="my-12 pb-12 md:pt-16 md:pb-48">
         <h1 className="text-center font-bold text-4xl">
           Sobre
-          <hr className="w-8 h-1 mx-auto my-4 bg-red-700 border-0 rounded"></hr>
+          <hr className="w-8 h-1 mx-auto my-4 bg-amber-400 border-0 rounded"></hr>
         </h1>
 
         <div className="flex flex-col space-y-10 items-stretch justify-center align-top md:space-x-10 md:space-y-0 md:p-4 md:flex-row md:text-left">
@@ -77,7 +77,6 @@ const AboutSection = () => {
                     backgroundImage: `url(${slides[currentIndex].url})`,
                     transition: "opacity 0.5s ease-in-out",
                     opacity: isTransitioning ? 0 : 1, // Aplica opacidade baseada no estado de transição
-                    
                   }}
                   className="absolute top-0 left-0 right-0 bottom-0 bg-center bg-cover rounded-2xl"
                 ></div>
@@ -107,36 +106,53 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-center ">
-              <Image
-                src="/banco-safra-logo.png"
-                alt="Banco Safra Logo"
-                width={150}
-                height={150}
-                className="mx-auto my-14 items-center justify-center"
-              />
+            <div className="flex flex-col md:flex-row items-center justify-center md:space-x-12">
+              <div className="flex justify-center md:justify-start md:w-1/2">
+                <img
+                  src="/banco-safra-logo.png"
+                  alt="Banco Safra Logo"
+                  width={300}
+                  height={300}
+                  className="my-16 rounded-xl shadow-xl"
+                />
+              </div>
 
-              <div className="w-full max-w-4xl flex flex-col justify-center items-center text-center space-y-4">
-                <h1 className="text-2xl font-bold mb-6">Minha história!</h1>
+              <div className="w-full md:max-w-3xl text-xl flex flex-col justify-center items-center text-center
+               md:text-left md:items-start space-y-3 mx-auto">
+                <h1 className="text-3xl font-bold mb-6">Minha história!</h1>
                 <p>
-                  Sou o Santiago Palanca
-                  <span className="font-bold"> self-motivated </span> systems
-                  analyst based in São Paulo, BR.
+                  Oi! Meu nome é Santiago Palanca, tenho 19 anos anos e atuo
+                  profissionalmente como{" "}
+                  <span className="text-amber-400">Dj </span>
+                  desde 2019 e sou{" "}
+                  <span className="font-semibold text-amber-400">
+                    produtor musical
+                  </span>{" "}
+                  desde 2022.
                 </p>
                 <p>
-                  I graduated from São Paulo State University, FIAP in 2023 on
-                  technologist, with a systems analyst and have been working in
-                  the field since mid year 2023.
+                  Minha jornada musical não se limita a um único gênero.{" "}
+                  <span className="font-semibold text-amber-400">Exploro</span>{" "}
+                  e incorporo uma variedade de estilos em minhas performances,
+                  criando uma experiência sonora {" "}
+                  <span className="font-semibold text-amber-400">
+                     única
+                  </span> {" "}
+                  para meu público. Desde o funk aos hits pop, flashbacks dos
+                  anos 80 e a música eletrônica.
                 </p>
                 <p>
-                  I have a wide range of hobbies and passions that keep me busy.
-                  From studying, playing video games, riding a motorcycle, and
-                  searching about the world, I am always seeking new experiences
-                  and love to keep myself engaged and learning new things.
-                </p>
-                <p>
-                  
-                  buscando aprender mais
+                  Em última <span className="font-bold">análise</span>, minha
+                  jornada musical é uma busca incessante pela{" "}
+                  <span className="font-semibold text-amber-400">harmonia</span>{" "}
+                  entre a energia eletrônica, a diversão do funk, o brilho do
+                  pop e a nostalgia dos anos 80. Cada apresentação é uma{" "}
+                  <span className="font-semibold text-amber-400">
+                    celebração
+                  </span>{" "}
+                  da música em todas as suas formas, e estou aqui para
+                  compartilhar essa paixão com todos aqueles que se juntam a mim
+                  na pista de dança.
                 </p>
               </div>
             </div>
