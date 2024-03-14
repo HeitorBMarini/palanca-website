@@ -27,13 +27,13 @@ const Events = () => {
         <hr className="w-8 h-1 mx-auto my-4  bg-amber-400 border-0 rounded"></hr>
       </h1>
 
-      <div className="flex flex-col space-y-28">
+      <div className="flex flex-col  space-y-28">
         {eventos.map((evento, idx) => {
           return (
             <div key={idx}>
               {/* O componente SlideUp pode precisar ser ajustado ou removido dependendo da sua implementação */}
               <SlideUp offset="-300px 0px -300px 0px">
-                <div className="flex flex-col md:flex-row md:items-center md:space-x-12">
+                <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-12">
                   <div className="md:w-1/2 flex justify-center">
                     <video
                       src={evento.video}
@@ -41,7 +41,7 @@ const Events = () => {
                         maxWidth: "90%", // Assegura que o vídeo não exceda a largura do contêiner
                         aspectRatio: "1 / 1", // Mantém uma proporção quadrada
                       }}
-                      className="rounded-xl shadow-xl hover:opacity-70"
+                      className="video-fade-in rounded-xl shadow-xl hover:opacity-70"
                       controls // Adiciona controles de reprodução
                     ></video>
                   </div>
